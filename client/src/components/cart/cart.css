@@ -1,0 +1,53 @@
+.Home-page {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #18e06f;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.Home-page a:hover {
+    background-color: #18e666;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.produktet {
+    height: 200px;
+    width: 100px;
+}
+
+h4 {
+    color: #666666;
+}
+
+.container {
+    font-family: "Roboto", sans-serif;
+}
+
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+button {
+    width:100%;
+    cursor: pointer;
+}
+
+.error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.error-actions .btn {
+    margin-right: 10px;
+}

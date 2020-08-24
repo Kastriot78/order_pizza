@@ -1,0 +1,13 @@
+.wrap {
+    overflow: hidden;
+}
+
+.wrap img {
+    transition: 0.8s;
+    opacity: 0.9;
+}
+
+.wrap:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+}

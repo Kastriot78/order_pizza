@@ -1,0 +1,153 @@
+.search {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.search input {
+  width: 50%;
+  margin: 0 auto;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #52d67a;
+}
+
+#nav {
+  background-color: #f2f2f2 !important;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  height: 46px;
+}
+
+#logo {
+  width: 30px;
+  height: 30px;
+}
+
+#butoni-collapse {
+  height: 100%;
+  border: none !important;
+  outline: none;
+  border-radius: 0 !important;
+  background-color: #f1f1f1;
+}
+
+#butoni-collapse:hover {
+  background-color: #f2f2f2;
+}
+
+.fas {
+  color: #666666;
+}
+
+.menu-md li {
+  list-style: none;
+  padding-left: 30px;
+}
+
+.menu-md li:nth-child(1) {
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-md {
+    display: none !important;
+  }
+
+  header {
+    height: 54px;
+  }
+}
+
+.menu-md li a {
+  color: #333333;
+  font-weight: 600;
+}
+
+.menu-md li a:hover {
+  color: #52d67a;
+}
+
+#slidemenu {
+  position: fixed;
+  top: 0px;
+  left: -100%;
+  z-index: 100;
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  /*overflow-y: scroll;*/
+  transition: 0.3s;
+  border-right: 1px solid #cccccc;
+}
+
+@media only screen and (max-width: 572px) {
+  #slidemenu {
+    width: 100%;
+  }
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  background: #ffffff;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.close #close {
+  position: absolute;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+#slidemenu li {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 9%;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+#slidemenu li a {
+  position: absolute;
+  left: 7%;
+  transform: translateX(-7%);
+  text-decoration: none;
+  font-size: 18px;
+  color: #333333;
+  font-weight: 400;
+  line-height: 65px;
+}
+
+#slidemenu .fokused {
+  color: #c41230;
+}
+
+#slidemenu li:hover .fokused {
+  color: #c41230;
+}
+
+#slidemenu .activated:hover {
+  background: #d9d9d9;
+}
+
+#slidemenu li:hover {
+  background: #d9d9d9;
+}
+
+#slidemenu li:hover a {
+  color: #333333;
+}
