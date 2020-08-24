@@ -61,7 +61,7 @@ class Order extends Component {
     const config = {
       headers: { "content-type": "multipart/form-data" },
     };
-    const url = "https://orderpizza-online.herokuapp.com/server/order.php";
+    const url = "https://orderingpizza-online.herokuapp.com/server/order.php";
     axios
       .post(url, formData, config)
       // .then(function (response) {

@@ -73,7 +73,7 @@ class Add extends Component {
         const config = {
             headers: { "content-type": "multipart/form-data" }
         };
-        const url = 'https://orderpizza-online.herokuapp.com/server/add.php';
+        const url = 'https://orderingpizza-online.herokuapp.com/server/add.php';
         axios.post(url, formData, config)
         .then(function(response) {
             console.log(response.data)

@@ -7,11 +7,7 @@ import { getAllPizzas, addToCart } from '../../actions/index';
 import './pizza.css';
 
 class Pizza extends Component {
-
-    // state = {
-    //     inCart: false
-    // }
-
+    
     componentWillMount() {
         this.props.dispatch(getAllPizzas());
     }

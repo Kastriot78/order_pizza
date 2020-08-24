@@ -33,7 +33,7 @@ class Contact extends Component {
         formData.append("email", data.email);
         formData.append("subject", data.subject);
         formData.append("message", data.message);
-        const url = 'https://orderpizza-online.herokuapp.com/server/contact.php'; 
+        const url = 'https://orderingpizza-online.herokuapp.com/server/contact.php'; 
         axios.post(url, formData)
         .then(function(response) {
             console.log(response.data)

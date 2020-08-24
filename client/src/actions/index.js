@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getAllPizzas() {
-    const request = axios.get('https://orderpizza-online.herokuapp.com/server/all-pizzas.php')
+    const request = axios.get('https://orderingpizza-online.herokuapp.com/server/all-pizzas.php')
     .then(response => response.data);
     return {
         type: 'ALL_PIZZAS',
@@ -10,7 +10,7 @@ export function getAllPizzas() {
 }
 
 export function getPizza(id) {
-    const request = axios.get(`https://orderpizza-online.herokuapp.com/server/getById.php?id=${id}`)
+    const request = axios.get(`https://orderingpizza-online.herokuapp.com/server/getById.php?id=${id}`)
     .then(response => response.data);
     return {
         type: 'GET_PIZZA',
@@ -19,7 +19,7 @@ export function getPizza(id) {
 }
 
 export function getOrderById(id) {
-    const request = axios.get(`https://orderpizza-online.herokuapp.com/server/getOrderById.php?id=${id}`)
+    const request = axios.get(`https://orderingpizza-online.herokuapp.com/server/getOrderById.php?id=${id}`)
     .then(response => response.data);
     
     return {
