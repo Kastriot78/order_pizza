@@ -33,7 +33,6 @@ export function addToCart(items,product) {
     let productInCart = false;
     cartItems.forEach((item) => {
         if(item[0] === product[0]) {
-            item.count += 1;
             productInCart = true;
         }
     })
@@ -49,6 +48,29 @@ export function addToCart(items,product) {
         
     }
 
+}
+
+
+export function increaseQuantity(items, product) {
+    const cartItemsss = items.slice();
+    let productInCart = false;
+    cartItemsss.forEach((item) => {
+        if(item[0] === product[0]) {
+            item.count += 1;
+            productInCart = true;
+        }
+    })
+    if(!productInCart) {
+        cartItemsss.push({...product, count: 1});
+    }
+   
+    localStorage.setItem("cartItems", JSON.stringify(cartItemsss));
+
+    return {
+        type: 'QUANTITY_PLUS',
+        payload: {cartItemsss}
+        
+    }
 }
 
 export function decreaseQuantity(items, product) {
