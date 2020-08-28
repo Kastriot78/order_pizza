@@ -14,16 +14,9 @@
         $result = mysqli_query($db_conn,$sql);
 
         if($result->num_rows == 1) {  
-            foreach($result as $row)
-            {
-                $data['id'] = $row['id'];
-                $data['name'] = $row['name'];
-                $data['image'] = $row['image'];
-                $data['description'] = $row['description'];
-                $data['price'] = $row['price'];
-            }
+           $res = mysqli_fetch_array($result);
   
-            echo json_encode($data);
+            echo json_encode($res);
         } else {
             echo json_encode(["success"=>false, "msg"=>"Piiza Not Found!"]);
         }
