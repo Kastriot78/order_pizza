@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import CartCalculator from "./cartCalculator";
-import { addToCart, decreaseQuantity, removeFromCart } from '../../actions/index';
+import { addToCart, increaseQuantity, decreaseQuantity, removeFromCart } from '../../actions/index';
 
 import "./cart.css";
 
@@ -10,6 +10,10 @@ class CartPizzas extends Component {
 
     addPizzaToCart = (product) => {
       this.props.dispatch(addToCart(this.props.pizzaCart.items,product))
+    }
+    
+    increaseQuantity = (product) => {
+      this.props.dispatch(increaseQuantity(this.props.pizzaCart.items, product))
     }
 
     decreaseQuantity = (product) => {
@@ -35,9 +39,9 @@ class CartPizzas extends Component {
                                         <i className="fa fa-trash"></i>
                                     </a>
                                     <div className="btn-group">
-                                        <button onClick={() => this.addPizzaToCart(item)} class=" btn btn-outline-primary"><i class="far fa-plus-square"></i></button>
+                                        <button onClick={() => this.increaseQuantity(item)} class=" btn btn-outline-primary"><i class="far fa-plus-square"></i></button>
                                         <h3 class="text-center d-block my-auto pl-2 pr-2">{ item.count }</h3>
-                                        <button onClick={() => this.decreaseQuantity(item)}class="btn btn-outline-primary" id="zvogloSasinBtn"><i class="far fa-minus-square"></i></button>
+                                        <button onClick={() => this.decreaseQuantity(item)} disabled={item.count === 1} class="btn btn-outline-primary" style={{cursor: ((item.count === 1) ? 'no-drop' : 'pointer')}} id="zvogloSasinBtn"><i class="far fa-minus-square"></i></button>
                                     </div>
                                     </div>
                                 </div>
