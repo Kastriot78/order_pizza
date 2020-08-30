@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom';
 import util from '../../util';
 
 class CartCalculator extends Component {
-
-    state = {
-        deleveryCost: 5.0
-    }
-
+    
     renderCartCalculator = (products) => {
         return (
             products.items ?
@@ -42,9 +38,13 @@ class CartCalculator extends Component {
                     <span className="badge badge-primary badge-pill">{this.props.pizzaCart.items.length}</span>
                 </h4>
                 {this.renderCartCalculator(this.props.pizzaCart)}
+                <li className="list-group-item d-flex justify-content-between mb-3">
+                    <span>Delivery Cost</span>
+                    <strong>€ 5.00</strong>
+                </li>
                 <li className="list-group-item d-flex justify-content-between">
                     <span>Total (EUR)</span>
-                    <strong>€ {util.formatCurrency(this.props.pizzaCart.items.reduce((a, b) => (a + parseFloat(b[4])*b.count), 0))}</strong>
+                    <strong>€ {util.formatCurrency(this.props.pizzaCart.items.reduce((a, b) => (a + parseFloat(b[4])*b.count), 0) + 5.0)}</strong>
                 </li>
                 <ul className="list-group mb-3">
                     <Link to="/order">
