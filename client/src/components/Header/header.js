@@ -69,16 +69,16 @@ class Header extends Component {
 
                         </div>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/" onClick={this.hideMenu}>Home</Link>
                         </li>
                         <li>
-                            <Link to="/menu">Menu</Link>
+                            <Link to="/menu" onClick={this.hideMenu}>Menu</Link>
                         </li>
                         <li>
-                            <Link to="/contact">Contact</Link>
+                            <Link to="/contact" onClick={this.hideMenu}>Contact</Link>
                         </li>
                         <li>
-                            <Link to="/login"><i className="fas fa-user "></i> My Account</Link>
+                            <Link to="/login" onClick={this.hideMenu}><i className="fas fa-user "></i> My Account</Link>
                         </li>
                     </div>
                 </nav>
