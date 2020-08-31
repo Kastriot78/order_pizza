@@ -190,6 +190,11 @@ button.page-link {
     font-size: 15px;
 }
 
+.active-cyan-4 input[type=text]:focus:not([readonly]) {
+    border: 1px solid #4dd0e1;
+    box-shadow: 0 0 0 1px #4dd0e1;
+}
+
 @media screen and (max-width: 990px) {
     .product-grid2 {
         margin-bottom: 30px;
