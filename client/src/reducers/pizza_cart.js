@@ -11,6 +11,8 @@ export default function(state = initialState , action) {
             return {items: action.payload.cartItemsss}
         case 'REMOVE_FROM_CART':
             return {items: action.payload.cartRemoveItems}
+         case 'REMOVE_CART':
+            return {items: action.payload.cartAllItems}
         default:
             return state;
     }
