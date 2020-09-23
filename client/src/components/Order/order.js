@@ -70,13 +70,13 @@ class Order extends Component {
       // })
       .then(response => {
         this.props.history.push(`/order-complete/${response.data.id}`);
+        this.props.dispatch(reset("OrderForm"));
       })
       .catch(function (error) {
         console.log(error.message);
         console.log("ERROR");
       });
-      this.props.dispatch(reset("OrderForm"));
-      localStorage.removeItem("cartItems");
+     
   };
 
   render() {
