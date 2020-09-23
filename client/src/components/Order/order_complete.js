@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getOrderById } from "../../actions/index";
+import { getOrderById, removeCart } from "../../actions/index";
 
 class OrderComplete extends Component {
   componentWillMount() {
     this.props.dispatch(getOrderById(this.props.match.params.id));
+  }
+
+  removeAllItemsFromCart() { 
+    this.props.dispatch(removeCart(this.props.pizzaCart.items));
   }
 
   renderOrder(item) {
@@ -31,7 +35,7 @@ class OrderComplete extends Component {
           </dl>
         </div>
         <div>
-          <Link to="/" className="btn btn-success">
+          <Link to="/" className="btn btn-success" onClick={() => this.removeAllItemsFromCart()}>
             Go Home Page
           </Link>
         </div>
@@ -49,8 +53,9 @@ class OrderComplete extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state)
+  console.log(state);
   return {
+    pizzaCart: state.pizzaCart,
     orders: state.orders,
   };
 }
