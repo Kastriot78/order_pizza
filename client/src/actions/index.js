@@ -104,3 +104,15 @@ export function removeFromCart(items, product) {
         payload: {cartRemoveItems}
     }
 }
+
+//reset cart when charge is done
+export function removeCart(items) {
+    items = [];
+    const cartAllItems = items;
+    localStorage.setItem('cartItems', JSON.stringify(cartAllItems));
+
+    return {
+        type: 'REMOVE_CART',
+        payload: {cartAllItems}
+    }
+}
