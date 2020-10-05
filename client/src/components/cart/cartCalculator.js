@@ -4,7 +4,19 @@ import { Link } from 'react-router-dom';
 import util from '../../util';
 
 class CartCalculator extends Component {
-    
+
+    state = {
+        selectValue: '€'
+    }
+
+    handleChange = (e) => {
+        this.setState({selectValue:e.target.value});
+    }
+
+    fromEuroToDollar = (valueToConvert) => {
+        return '$ ' + util.formatCurrency(valueToConvert * 1.17845);
+    }
+
     renderCartCalculator = (products) => {
         return (
             products.items ?
@@ -16,7 +28,8 @@ class CartCalculator extends Component {
                                 <div>
                                     <h6 className="my-0">{item[1]}</h6>
                                 </div>
-                                <span className="text-muted" style={{width:"120px"}}>€ {item[4]}</span>
+                                {/* <span className="text-muted" style={{width:"120px"}}>€ {item[4]}</span> */}
+                                <span className="text-muted" style={{width:"120px"}}>{this.state.selectValue == '€' ? '€ ' + item[4] : this.fromEuroToDollar(item[4])}</span>
                             </li>
                             
                         </ul>  
@@ -37,15 +50,29 @@ class CartCalculator extends Component {
                     <span className="text-muted">Your cart</span>
                     <span className="badge badge-primary badge-pill">{this.props.pizzaCart.items.length}</span>
                 </h4>
+
                 {this.renderCartCalculator(this.props.pizzaCart)}
+
                 <li className="list-group-item d-flex justify-content-between mb-3">
                     <span>Delivery Cost</span>
-                    <strong>€ 5.00</strong>
+                    {/* <strong>€ 5.00</strong> */}
+                    <strong>{this.state.selectValue == '€' ? '€ 5.00' : this.fromEuroToDollar(5.00)}</strong>
                 </li>
                 <li className="list-group-item d-flex justify-content-between">
                     <span>Total (EUR)</span>
-                    <strong>€ {util.formatCurrency(this.props.pizzaCart.items.reduce((a, b) => (a + parseFloat(b[4])*b.count), 0) + 5.0)}</strong>
+                    {/* <strong>€ {util.formatCurrency(this.props.pizzaCart.items.reduce((a, b) => (a + parseFloat(b[4])*b.count), 0) + 5.0)}</strong> */}
+                    <strong>
+                    {this.state.selectValue == '€' ? '€ ' + util.formatCurrency(this.props.pizzaCart.items.reduce((a, b) => (a + parseFloat(b[4])*b.count), 0) + 5.0) : this.fromEuroToDollar(this.props.pizzaCart.items.reduce((a, b) => (a + parseFloat(b[4])*b.count), 0) + 5.0) }</strong>
+
                 </li>
+                <select className="form-control euro-select"
+                    value={this.state.selectValue} 
+                    onChange={this.handleChange} 
+                >
+                    <option value="€">€</option>
+                    <option value="$">$</option>
+                </select>
+               
                 <ul className="list-group mb-3">
                     <Link to="/order">
                         <button className="btn btn-success mt-2 text-white">
