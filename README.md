@@ -1,4 +1,4 @@
-# THE YUMMY PIZZA TASK
+# THE YUMMY PIZZA
 
 1. This website was built for a pizza delivery business. Users can visit the home page or menu to view a variety of pizzas and place orders. 
 2. When a pizza is added to the cart, a notification ("Product added to shopping cart") is displayed. Users cannot add the same product twice to the cart. 
