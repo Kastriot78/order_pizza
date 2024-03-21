@@ -1,18 +1,12 @@
-            THE YUMMY PIZZA TASK
-            
-            The website was build for a pizza delivery business.When we go to home page, or to menu we can see a lot of pizzas and then we can start order pizzas,
-            when we add a pizza to cart we will see a notification(Product added to shopping cart).User cannot add same product twice on the cart.User can click to card,
-            where there is a button quick view where he can all details about that pizza.When we go to cart we can see all of our products that we added to cart, and user can
-            increase and decrease quantity of products.And then if user clicks on order now button, he will see a form where he should fill that form with personal information
-            and than he can see that his order is on the way.
-            
-            All requirements from task are implemented on the website!
-            
-            URL:
-            
-            https://ordering-pizza-online.herokuapp.com
-            
-            Prerequisites
-            This project is created using php and react.
+# THE YUMMY PIZZA TASK
 
-            
+1. This website was built for a pizza delivery business. Users can visit the home page or menu to view a variety of pizzas and place orders. 
+2. When a pizza is added to the cart, a notification ("Product added to shopping cart") is displayed. Users cannot add the same product twice to the cart. 
+3. Clicking on the cart reveals all added products, with options to increase or decrease quantities. 
+4. Clicking "Order Now" prompts the user to fill out a form with personal information before confirming the order.
+
+# All requirements from the task are implemented on the website!
+
+## Prerequisites
+This project is created using PHP and React.
+
